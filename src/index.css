@@ -60,10 +60,6 @@
   cursor: pointer;
 }
 
-.Todo-item:hover {
-  /* background: #FAF8D4; */
-}
-
 .Todo-item .todo-text {  
   word-break: break-all;
 }
