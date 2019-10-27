@@ -65,9 +65,8 @@ body {
   cursor: pointer;
 }
 
-.Todo-item .todo-title {  
-  word-break: break-all;
-  white-space: pre;
+.Todo-item .todo-title {    
+  white-space: pre-wrap;
 }
 
 .Todo-item button {
