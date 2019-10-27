@@ -2,11 +2,16 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .button {
   background: #6E75A8;
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: #fff;  
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 1rem;
   padding: 8px;  
@@ -60,8 +65,9 @@
   cursor: pointer;
 }
 
-.Todo-item .todo-text {  
+.Todo-item .todo-title {  
   word-break: break-all;
+  white-space: pre;
 }
 
 .Todo-item button {

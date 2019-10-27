@@ -1,12 +1,15 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Todo from './containers/Todo';
+import Todo from './pages/Todo';
 
 function App() {
   return (
-    <div className="App">
-      <Todo />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/' component={Todo} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

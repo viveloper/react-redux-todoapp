@@ -1,36 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-export default function TodoForm(props) {
-    const { onClickAdd } = props;
-    const [text, setText] = useState('');
+function TodoForm(props) {
+    const [title, setTitle] = useState('');
 
-    const todo = {
-        text: text,
-        date: `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`,
-        completed: false
-    }
+    const { addTodo } = props;
 
     const handleChange = (e) => {
-        if (e.target.name === 'text') {
-            setText(e.target.value);
+        if (e.target.name === 'title') {
+            setTitle(e.target.value);
         }
-    };
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(text){
-            onClickAdd(todo);
-            setText('');
-        }        
-        else{
-            alert('Fill in the content.');
+        const todo = {
+            title,
+            completed: false,
+            username: 'anonymous'
         }
+        addTodo(todo);
+        setTitle('');
     }
-                
+
     return (
         <form className="Todo-form" onSubmit={handleSubmit}>
-            <textarea name="text" onChange={handleChange} value={text}></textarea>
-            <button className="button button-block" type="submit">Add</button>
+            <textarea name="title" onChange={handleChange} value={title}></textarea>
+            <button className="button button-block" type="submit">ADD</button>
         </form>
     );
 }
+
+export default TodoForm;
