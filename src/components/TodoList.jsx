@@ -12,9 +12,9 @@ function TodoList(props) {
                 <div className="todo-title">{todo.title}</div>
                 {todo.completed ? <div className="todo-completed">completed</div> : null}
                 <div className="todo-button-container">
-                    <button className="button btn-complete" onClick={() => { completeTodo(index) }}><i class="fas fa-check"></i></button>
+                    <button className={todo.completed ? 'button btn-complete btn-completed' : 'button btn-complete'} onClick={() => { completeTodo(index) }}><i className="fas fa-check"></i></button>
                     {/* <button className="button btn-edit"><i className="far fa-edit"></i></button> */}
-                    <button className="button btn-delete" onClick={(e) => { deleteTodo(index, e) }}><i class="far fa-trash-alt"></i></button>
+                    <button className="button btn-delete" onClick={(e) => { deleteTodo(index, e) }}><i className="far fa-trash-alt"></i></button>
                 </div>
             </div>
         );

@@ -88,6 +88,16 @@ body {
   background: rgb(132, 229, 165);
 }
 
+.Todo-item .btn-completed {
+  background: rgb(206, 206, 206);
+  color: #999;  
+}
+
+.Todo-item .btn-completed:hover {
+  background: rgb(194, 194, 194);
+  color: #999;  
+}
+
 .Todo-item .btn-edit {
   background: rgb(211, 196, 59);
 }
