@@ -4,7 +4,7 @@ import TodoListContainer from '../containers/TodoListContainer';
 
 function Todo(props) {
     return (
-        <div>
+        <div className="Todo">
             <TodoFormContainer />
             <TodoListContainer />
         </div>

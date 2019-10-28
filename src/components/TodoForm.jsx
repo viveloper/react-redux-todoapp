@@ -17,7 +17,8 @@ function TodoForm(props) {
             const todo = {
                 title,
                 completed: false,
-                username: 'anonymous'
+                username: 'anonymous',
+                selected: false
             }
             addTodo(todo);
             setTitle('');

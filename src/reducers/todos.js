@@ -1,4 +1,4 @@
-import { ADD_TODO, SET_TODOS, COMPLETE_TODO, DELETE_TODO } from "../actions/todos"
+import { ADD_TODO, SET_TODOS, COMPLETE_TODO, DELETE_TODO, UP_TODO, DOWN_TODO, SELECT_TODO } from "../actions/todos"
 
 const initialState = [];
 
@@ -30,7 +30,63 @@ const todos = (state = initialState, action) => {
                 break;
             }
         }
+        return copiedTodos;
+    }
+    else if (action.type === UP_TODO) {
+        if (action.index === state.length - 1) {
+            return state;
+        }
+        else {
+            const copiedTodos = state.map((todo) => ({ ...todo }));
+            let temp = copiedTodos[action.index];
+            copiedTodos[action.index] = copiedTodos[action.index + 1];
+            copiedTodos[action.index + 1] = temp;
 
+            for (const index in copiedTodos) {
+                if (parseInt(index) === action.index + 1) {
+                    copiedTodos[index].selected = true;
+                }
+                else {
+                    copiedTodos[index].selected = false;
+                }
+            }
+
+            return copiedTodos;
+        }
+    }
+    else if (action.type === DOWN_TODO) {
+        if (action.index === 0) {
+            return state;
+        }
+        else {
+            const copiedTodos = state.map((todo) => ({ ...todo }));
+            let temp = copiedTodos[action.index];
+            copiedTodos[action.index] = copiedTodos[action.index - 1];
+            copiedTodos[action.index - 1] = temp;
+
+            for (const index in copiedTodos) {
+                if (parseInt(index) === action.index - 1) {
+                    copiedTodos[index].selected = true;
+                }
+                else {
+                    copiedTodos[index].selected = false;
+                }
+            }
+
+            return copiedTodos;
+        }
+    }
+    else if (action.type === SELECT_TODO) {
+        const copiedTodos = state.map((todo) => ({ ...todo }));
+        for (const index in copiedTodos) {
+            if (parseInt(index) === action.index) {
+                copiedTodos[index].selected = true;
+            }
+            else {
+                copiedTodos[index].selected = false;
+            }
+        }
+        console.log('selectTodo', action.index);
         return copiedTodos;
     }
 
