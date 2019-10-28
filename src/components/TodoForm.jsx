@@ -13,13 +13,15 @@ function TodoForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const todo = {
-            title,
-            completed: false,
-            username: 'anonymous'
+        if (title) {
+            const todo = {
+                title,
+                completed: false,
+                username: 'anonymous'
+            }
+            addTodo(todo);
+            setTitle('');
         }
-        addTodo(todo);
-        setTitle('');
     }
 
     return (
