@@ -81,11 +81,11 @@ body {
 }
 
 .Todo-item .btn-complete {
-  background: rgb(57, 201, 105);
+  background: rgb(206, 206, 206);
 }
 
 .Todo-item .btn-complete:hover {
-  background: rgb(132, 229, 165);
+  background: rgb(194, 194, 194);
 }
 
 .Todo-item .btn-completed {
@@ -95,7 +95,7 @@ body {
 
 .Todo-item .btn-completed:hover {
   background: rgb(194, 194, 194);
-  color: #999;  
+  color: #999; 
 }
 
 .Todo-item .btn-edit {
