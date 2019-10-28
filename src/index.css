@@ -46,7 +46,7 @@ body {
 }
 
 .Todo-form button {
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
 .Todo-item {
@@ -70,8 +70,8 @@ body {
 
 .Todo-item button {
   display: block;
-  margin: 0 6px;
-  width: 3rem;  
+  margin: 0 4px;
+  width: 2.2rem;  
   background: rgb(231, 84, 84);
   font-size: 1rem;
 }
