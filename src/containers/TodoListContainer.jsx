@@ -21,7 +21,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         deleteTodo: (index, e) => {
             e.stopPropagation();
-            dispatch(deleteTodo(index));
+            if (window.confirm('Do you want to delete?')) {
+                dispatch(deleteTodo(index));
+            }
         }
     };
 }
