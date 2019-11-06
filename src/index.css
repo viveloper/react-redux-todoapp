@@ -78,14 +78,14 @@ body {
 .Todo-item .button {
   display: block;
   margin: 0 4px;
-  width: 2.2rem;  
+  width: 2rem;  
   font-size: 1rem;
 }
 
 .Todo-item .btn-delete {   
   background: none;
   color: rgb(218, 77, 67);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   padding: 0;  
 }
 
